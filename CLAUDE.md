@@ -2,9 +2,9 @@
 
 This document supplements AGENTS.md with Claude-specific guidance for the Nyx project.
 
-## Phase 0-1 Complete ✓
+## Phase 0-2 Complete ✓
 
-**Repository & Tooling Setup** and **Phase 1 — Data Layer (API + Types)** are complete.
+**Repository & Tooling Setup**, **Phase 1 — Data Layer (API + Types)**, and **Phase 2 — TanStack Query Integration** are complete.
 
 All foundational setup is done:
 - Next.js 16 (App Router, TypeScript strict, Tailwind v4)
@@ -15,6 +15,8 @@ All foundational setup is done:
 - Data-layer types implemented (`Asset`, `AssetDetails`)
 - CoinGecko data service implemented (`getMarkets`)
 - Price/percentage/volume/date formatter utilities implemented
+- TanStack Query provider implemented (`app/providers.tsx`)
+- Market data hook implemented (`useMarketData`)
 
 See AGENTS.md for full Phase 0 summary.
 
@@ -86,7 +88,7 @@ nyx-app/
 ```
 
 ## Next Steps
-Begin Phase 2 — TanStack Query Integration. Follow TASKS.md.
+Begin Phase 3 — Authentication. Follow TASKS.md.
 
 ---
 

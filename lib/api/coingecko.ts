@@ -1,9 +1,12 @@
 import type { Asset } from "@/lib/types/market";
 
 const COINGECKO_BASE_URL =
-  process.env.COINGECKO_BASE_URL ?? "https://api.coingecko.com/api/v3";
+  process.env.NEXT_PUBLIC_COINGECKO_BASE_URL ??
+  process.env.COINGECKO_BASE_URL ??
+  "https://api.coingecko.com/api/v3";
 
-const DEMO_API_KEY = process.env.CG_DEMO_API_KEY;
+const DEMO_API_KEY =
+  process.env.NEXT_PUBLIC_CG_DEMO_API_KEY ?? process.env.CG_DEMO_API_KEY;
 
 interface CoinGeckoMarketResponse {
   id: string;
