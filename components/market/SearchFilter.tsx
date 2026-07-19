@@ -22,8 +22,8 @@ export default function SearchFilter({
   }, [onSearchChange, searchInput]);
 
   return (
-    <label className="flex w-full flex-col gap-2 text-sm text-text-muted">
-      Search
+    <label className="flex w-full flex-col gap-1 text-sm text-text-muted">
+      <span className="sr-only">Search</span>
       <input
         aria-label="Search assets by name or symbol"
         className="w-full rounded border border-border bg-background px-3 py-2 text-text outline-none transition-colors placeholder:text-text-muted/60 focus:border-accent"

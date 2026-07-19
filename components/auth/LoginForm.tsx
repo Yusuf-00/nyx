@@ -49,7 +49,7 @@ export default function LoginForm() {
       </label>
       {error ? <p className="text-sm text-loss">{error}</p> : null}
       <button
-        className="rounded border border-border bg-accent px-4 py-2 text-sm font-medium text-on-accent transition-colors hover:opacity-90"
+        className="cursor-pointer rounded border border-border bg-accent px-4 py-2 text-sm font-medium text-on-accent transition-colors hover:opacity-90"
         type="submit"
       >
         Sign in
