@@ -1,9 +1,9 @@
 <!-- BEGIN:nextjs-agent-rules -->
 # Nyx Project Rules for Copilot Agents
 
-## Phase 0-2 Complete ✓
+## Phase 0-3 Complete ✓
 
-**Phase 0 — Repository & Tooling Setup**, **Phase 1 — Data Layer (API + Types)**, and **Phase 2 — TanStack Query Integration** are complete. The project is ready for Phase 3 implementation.
+**Phase 0 — Repository & Tooling Setup**, **Phase 1 — Data Layer (API + Types)**, **Phase 2 — TanStack Query Integration**, and **Phase 3 — Authentication** are complete. The project is ready for Phase 4 implementation.
 
 ### Setup Summary
 - ✅ Next.js 16 (latest stable) with TypeScript strict mode and Tailwind CSS v4
@@ -18,6 +18,9 @@
 - ✅ Formatting utilities added in `lib/utils/formatters.ts` (price, percentage, volume, date/time)
 - ✅ TanStack Query provider added in `app/providers.tsx`
 - ✅ Market data hook added in `lib/hooks/useMarketData.ts`
+- ✅ Auth context added in `lib/context/AuthContext.tsx`
+- ✅ Login hook + guarded routes added in `lib/hooks/useAuth.ts`, `components/auth/ProtectedRoute.tsx`
+- ✅ Login form and dashboard shell added with logout control
 
 ### Key References
 - **PLAN.md**: Architecture, tech stack, data flow, responsive design
@@ -46,7 +49,7 @@ npm run format                   # Run Prettier
 ```
 
 ### Next Steps
-Begin Phase 3 — Authentication. See TASKS.md for full requirements.
+Begin Phase 4 — Market Watch Table. See TASKS.md for full requirements.
 
 <!-- END:nextjs-agent-rules -->
 
