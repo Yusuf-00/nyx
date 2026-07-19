@@ -4,7 +4,7 @@ Crypto market, watch dashboard.
 
 A dark-themed, responsive trading-style dashboard for tracking live crypto market data — market watch table, asset details panel, manual refresh, and a demo authentication flow.
 
-**Live demo:** _add your Vercel URL here_
+**Live demo:** https://nyx-tau-five.vercel.app/
 
 ## Tech Stack
 
@@ -60,4 +60,4 @@ Market data comes from CoinGecko's `/coins/markets` endpoint. Data is fetched on
 
 ## Deployment
 
-Deployed on [Vercel](https://vercel.com). No custom configuration or environment variables are needed — Vercel auto-detects the Next.js project on import.
+Deployed on [Vercel](https://nyx-tau-five.vercel.app/). No custom configuration or environment variables are needed — Vercel auto-detects the Next.js project on import.
