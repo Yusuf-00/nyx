@@ -1,36 +1,63 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# nyx
+
+Crypto market, watch dashboard.
+
+A dark-themed, responsive trading-style dashboard for tracking live crypto market data — market watch table, asset details panel, manual refresh, and a demo authentication flow.
+
+**Live demo:** _add your Vercel URL here_
+
+## Tech Stack
+
+- Next.js 16+ (App Router)
+- TypeScript (strict mode)
+- Tailwind CSS
+- TanStack Query (`@tanstack/react-query`)
+- [CoinGecko public API](https://www.coingecko.com/en/api) — `/coins/markets`, no API key required
+- lucide-react
+
+## Features
+
+- **Market watch table** — name, symbol, price, 24h change %, 24h volume; search/filter by name or symbol; keyboard-selectable rows
+- **Asset details panel** — name, symbol, price, 24h high/low, volume, last updated — derived from the same cached data as the table, no extra network request on selection
+- **Manual refresh** — disabled while a request is in flight; loading, error, and empty states are all handled explicitly
+- **Demo authentication** — hardcoded credentials, session persisted in `localStorage`, protected `/dashboard` route
 
 ## Getting Started
 
-First, run the development server:
+Requires Node.js 18+.
 
 ```bash
+git clone <this-repo-url>
+cd nyx
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000).
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+No environment variables or API keys are required — the CoinGecko endpoint used here is public and CORS-enabled, so the app fetches it directly from the browser.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Demo Login
 
-## Learn More
+| Field | Value |
+|---|---|
+| Username | `demo` |
+| Password | `demo123` |
 
-To learn more about Next.js, take a look at the following resources:
+This is a local/demo auth flow only — credentials are hardcoded client-side for the purpose of this project and are **not** a real authentication system. There is no backend, database, or production password handling.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Data Source & Refresh Behavior
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Market data comes from CoinGecko's `/coins/markets` endpoint. Data is fetched once on load and cached via TanStack Query with `staleTime: Infinity` — there is no automatic polling or background refetching. Use the **Refresh** button to pull the latest prices on demand; it's disabled for the duration of the request to prevent duplicate calls and to respect CoinGecko's free-tier rate limit.
 
-## Deploy on Vercel
+## Project Structure
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+```
+/app          — routes (login, dashboard), root layout & providers
+/components   — market UI, auth UI, shared primitives
+/lib          — API client, hooks, auth context, types, formatters
+```
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Deployment
+
+Deployed on [Vercel](https://vercel.com). No custom configuration or environment variables are needed — Vercel auto-detects the Next.js project on import.
