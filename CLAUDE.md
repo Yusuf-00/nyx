@@ -2,9 +2,9 @@
 
 This document supplements AGENTS.md with Claude-specific guidance for the Nyx project.
 
-## Phase 0-4 Complete ✓
+## Phase 0-7 Complete ✓
 
-**Repository & Tooling Setup**, **Phase 1 — Data Layer (API + Types)**, **Phase 2 — TanStack Query Integration**, **Phase 3 — Authentication**, and **Phase 4 — Market Watch Table** are complete.
+**Repository & Tooling Setup**, **Phase 1 — Data Layer (API + Types)**, **Phase 2 — TanStack Query Integration**, **Phase 3 — Authentication**, **Phase 4 — Market Watch Table**, **Phase 5 — Asset Details Panel**, **Phase 6 — Refresh & State Handling**, and **Phase 7 — Visual & Accessibility Polish** are complete.
 
 All foundational setup is done:
 - Next.js 16 (App Router, TypeScript strict, Tailwind v4)
@@ -21,6 +21,9 @@ All foundational setup is done:
 - Login hook / route guards implemented (`useAuth`, `ProtectedRoute`)
 - Login page and dashboard shell implemented with logout control
 - Market watch table implemented (`MarketTable`, `MarketRow`, `SearchFilter`)
+- Asset details panel implemented with responsive desktop/tablet/mobile behavior
+- Refresh interaction and explicit loading/error/empty table states implemented
+- Visual polish complete (dark token consistency, nyx lockup in header/login, icon button aria labels)
 
 See AGENTS.md for full Phase 0 summary.
 
@@ -92,7 +95,7 @@ nyx-app/
 ```
 
 ## Next Steps
-Begin Phase 5 — Asset Details Panel. Follow TASKS.md.
+Begin Phase 8 — Deployment Prep (Vercel). Follow TASKS.md.
 
 ---
 

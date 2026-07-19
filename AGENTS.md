@@ -1,9 +1,9 @@
 <!-- BEGIN:nextjs-agent-rules -->
 # Nyx Project Rules for Copilot Agents
 
-## Phase 0-4 Complete ✓
+## Phase 0-7 Complete ✓
 
-**Phase 0 — Repository & Tooling Setup**, **Phase 1 — Data Layer (API + Types)**, **Phase 2 — TanStack Query Integration**, **Phase 3 — Authentication**, and **Phase 4 — Market Watch Table** are complete. The project is ready for Phase 5 implementation.
+**Phase 0 — Repository & Tooling Setup**, **Phase 1 — Data Layer (API + Types)**, **Phase 2 — TanStack Query Integration**, **Phase 3 — Authentication**, **Phase 4 — Market Watch Table**, **Phase 5 — Asset Details Panel**, **Phase 6 — Refresh & State Handling**, and **Phase 7 — Visual & Accessibility Polish** are complete. The project is ready for Phase 8 implementation.
 
 ### Setup Summary
 - ✅ Next.js 16 (latest stable) with TypeScript strict mode and Tailwind CSS v4
@@ -22,6 +22,9 @@
 - ✅ Login hook + guarded routes added in `lib/hooks/useAuth.ts`, `components/auth/ProtectedRoute.tsx`
 - ✅ Login form and dashboard shell added with logout control
 - ✅ Market watch table added in `components/market/MarketTable.tsx`, `components/market/MarketRow.tsx`, `components/market/SearchFilter.tsx`
+- ✅ Asset details panel added with desktop/tablet/mobile responsive behavior
+- ✅ Refresh button and table loading/error/empty states implemented
+- ✅ Visual polish complete (dark theme consistency, nyx lockups, icon-only button labels)
 
 ### Key References
 - **PLAN.md**: Architecture, tech stack, data flow, responsive design
@@ -50,7 +53,7 @@ npm run format                   # Run Prettier
 ```
 
 ### Next Steps
-Begin Phase 5 — Asset Details Panel. See TASKS.md for full requirements.
+Begin Phase 8 — Deployment Prep (Vercel). See TASKS.md for full requirements.
 
 <!-- END:nextjs-agent-rules -->
 

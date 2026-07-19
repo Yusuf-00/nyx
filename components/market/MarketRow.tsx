@@ -41,7 +41,7 @@ function MarketRowBase({
     >
       {columns.map((column, index) => {
         const cellClassName = [
-          "px-4 py-4 align-middle",
+          "px-4 py-2 align-middle",
           column.hiddenOnMobile ? "hidden md:table-cell" : "",
           column.className ?? "",
           index === 0 ? "pl-5" : "",
