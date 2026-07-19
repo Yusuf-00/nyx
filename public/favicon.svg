@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
+  <!-- Badge background -->
+  <rect width="64" height="64" rx="12" fill="#17171f"/>
+  
+  <!-- Three vertical bars (left to right) -->
+  <rect x="12" y="32" width="6" height="20" rx="1" fill="#6d5bfa"/>
+  <rect x="24" y="24" width="6" height="28" rx="1" fill="#8b7bff"/>
+  <rect x="36" y="16" width="6" height="36" rx="1" fill="#a99bff"/>
+  
+  <!-- Cyan dot accent above the tallest bar -->
+  <circle cx="42" cy="10" r="3" fill="#22d3ee"/>
+</svg>

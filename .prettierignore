@@ -1,0 +1,11 @@
+.next
+out
+build
+dist
+node_modules
+.git
+.turbo
+*.pem
+.env
+.env.local
+.env*.local

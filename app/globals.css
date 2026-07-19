@@ -1,26 +1,43 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+/* nyx is dark-themed only — no light mode, no theme toggle. */
+@theme {
+  --color-background: #0a0a0f;
+  --color-surface: #17171f;
+  --color-text: #ffffff;
+  --color-text-muted: #a1a1aa;
+  --color-border: rgba(255, 255, 255, 0.08);
+  --color-accent: #7c5cff;
+  --color-on-accent: #ffffff;
+  --color-gain: #2dd07a;
+  --color-loss: #ef4b6a;
+
+  --font-family-sans: Inter, system-ui, sans-serif;
+  --font-family-mono: "JetBrains Mono", monospace;
+
+  --radius: 0.25rem;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
+@layer base {
+  html {
+    color-scheme: dark;
+  }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+  body {
+    @apply min-h-screen bg-background text-text;
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+@layer components {
+  .btn {
+    @apply px-3 py-2 rounded bg-accent text-on-accent font-medium transition-all duration-200 hover:opacity-90 disabled:opacity-50 disabled:cursor-not-allowed;
+  }
+
+  .input {
+    @apply px-3 py-2 rounded border border-border bg-surface text-text placeholder-text-muted focus:outline-none focus:ring-2 focus:ring-accent;
+  }
+
+  .badge {
+    @apply inline-block px-2 py-1 rounded text-sm font-medium;
+  }
 }
