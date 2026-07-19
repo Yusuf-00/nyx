@@ -1,9 +1,9 @@
 <!-- BEGIN:nextjs-agent-rules -->
 # Nyx Project Rules for Copilot Agents
 
-## Phase 0-1 Complete ✓
+## Phase 0-2 Complete ✓
 
-**Phase 0 — Repository & Tooling Setup** and **Phase 1 — Data Layer (API + Types)** are complete. The project is ready for Phase 2 implementation.
+**Phase 0 — Repository & Tooling Setup**, **Phase 1 — Data Layer (API + Types)**, and **Phase 2 — TanStack Query Integration** are complete. The project is ready for Phase 3 implementation.
 
 ### Setup Summary
 - ✅ Next.js 16 (latest stable) with TypeScript strict mode and Tailwind CSS v4
@@ -16,6 +16,8 @@
 - ✅ Data-layer types created in `lib/types/market.ts` (`Asset`, `AssetDetails`)
 - ✅ CoinGecko integration added in `lib/api/coingecko.ts` via `getMarkets(): Promise<Asset[]>`
 - ✅ Formatting utilities added in `lib/utils/formatters.ts` (price, percentage, volume, date/time)
+- ✅ TanStack Query provider added in `app/providers.tsx`
+- ✅ Market data hook added in `lib/hooks/useMarketData.ts`
 
 ### Key References
 - **PLAN.md**: Architecture, tech stack, data flow, responsive design
@@ -44,7 +46,7 @@ npm run format                   # Run Prettier
 ```
 
 ### Next Steps
-Begin Phase 2 — TanStack Query Integration. See TASKS.md for full requirements.
+Begin Phase 3 — Authentication. See TASKS.md for full requirements.
 
 <!-- END:nextjs-agent-rules -->
 
