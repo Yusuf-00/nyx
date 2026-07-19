@@ -2,18 +2,28 @@
 
 This document supplements AGENTS.md with Claude-specific guidance for the Nyx project.
 
-## Phase 0 Complete ✓
+## Phase 0-1 Complete ✓
 
-**Repository & Tooling Setup** is complete. All foundational setup is done:
+**Repository & Tooling Setup** and **Phase 1 — Data Layer (API + Types)** are complete.
+
+All foundational setup is done:
 - Next.js 16 (App Router, TypeScript strict, Tailwind v4)
 - Dependencies: @tanstack/react-query, lucide-react, ESLint, Prettier
 - Tailwind dark-only brand color tokens (no light mode, no theme toggle)
 - Favicon and page title set
 - Folder structure created
+- Data-layer types implemented (`Asset`, `AssetDetails`)
+- CoinGecko data service implemented (`getMarkets`)
+- Price/percentage/volume/date formatter utilities implemented
 
 See AGENTS.md for full Phase 0 summary.
 
 ## Claude-Specific Guidelines
+
+### Branching Workflow (Mandatory)
+1. Do each phase in a separate branch.
+2. Create the phase branch from `main` before starting implementation.
+3. Do not start a new phase on top of an unmerged phase branch.
 
 ### Code Generation
 1. **Type Safety First** — Always use TypeScript strict mode. No `any` types. Use discriminated unions for complex state.
@@ -49,6 +59,10 @@ CoinGecko API → lib/api/coingecko.ts → lib/hooks/useMarketData.ts → app/da
 - ❌ Don't add light mode, a theme toggle, or `prefers-color-scheme` handling — nyx is dark-themed only
 - ❌ Don't hardcode component dimensions — use Tailwind spacing utilities
 
+### Human-in-the-Loop Requirement
+- Ask the human before any external or scope-dependent action that cannot be safely inferred from repo docs.
+- Explicit examples: confirming the correct data-layer URL, connecting third-party services, deployment/account wiring, secrets/credentials setup, and any out-of-scope integration tasks.
+
 ## File Locations Quick Reference
 ```
 nyx-app/
@@ -72,7 +86,7 @@ nyx-app/
 ```
 
 ## Next Steps
-Begin Phase 1 — Data Layer (API + Types). Follow TASKS.md.
+Begin Phase 2 — TanStack Query Integration. Follow TASKS.md.
 
 ---
 
